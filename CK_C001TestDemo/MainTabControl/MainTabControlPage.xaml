@@ -1,0 +1,49 @@
+﻿<Page x:Class="CK_C001TestDemo.MainTabControl.MainTabControlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CK_C001TestDemo.MainTabControl"
+      
+      mc:Ignorable="d" 
+      Title="MainTabControlPage">
+
+
+    <Grid x:Name="grid"  Background="#FF333333" >
+        <TabControl x:Name="MainLeftTabControl" TabStripPlacement="Left" Background="White"  Margin="0" >
+            <TabItem x:Name="TabItem_Link" Header="{DynamicResource 102000}" Width="80" Height="80" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"  Margin="0,0,-3,0" FontWeight="Bold" Style="{DynamicResource TabItemStyle}" 
+                TextOptions.TextFormattingMode="Display" >
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/setting.png"/>
+                </TabItem.Background>
+                <Frame x:Name="FrameSetting" Margin="5"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem  Header="{DynamicResource 103000}" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold" Style="{DynamicResource TabItemStyle}" TextOptions.TextFormattingMode="Display" >
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/test.png"/>
+                </TabItem.Background>
+                <Frame Margin="5" x:Name="FrameTest"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+
+            <TabItem   Header="{DynamicResource 105000}" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold" Style="{DynamicResource TabItemStyle}" TextOptions.TextFormattingMode="Display" >
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/log.png"/>
+                </TabItem.Background>
+                <Frame Margin="5" x:Name="FrameLog"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+
+            <TabItem  Header="{DynamicResource 107000}" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold" Style="{DynamicResource TabItemStyle}" TextOptions.TextFormattingMode="Display" >
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/append.png"/>
+                </TabItem.Background>
+                <Frame x:Name="FrameAppendRFID" Margin="5"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+            <TabItem  Header="{DynamicResource 108000}" Height="80" Margin="0,0,-3,0" Width="80" FontWeight="Bold" Style="{DynamicResource TabItemStyle}" TextOptions.TextFormattingMode="Display" >
+                <TabItem.Background>
+                    <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/append.png"/>
+                </TabItem.Background>
+                <Frame x:Name="FrameAppendLock" Margin="5"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

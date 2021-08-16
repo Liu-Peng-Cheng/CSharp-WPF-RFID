@@ -1,0 +1,14 @@
+﻿<Page x:Class="CK_C001TestDemo.Log.LogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CK_C001TestDemo.Log"
+      mc:Ignorable="d" 
+      Title="LogPage">
+    <Grid>
+        <GroupBox Header="CK-C001测试日志" Margin="10 20 30 30">
+            <TextBox x:Name="TxtLog" Grid.Row="1"  TextWrapping="Wrap" IsReadOnly="True" AcceptsReturn="True"  VerticalScrollBarVisibility="Visible" />
+        </GroupBox>
+    </Grid>
+</Page>

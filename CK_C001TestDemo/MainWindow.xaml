@@ -1,0 +1,66 @@
+﻿<Window x:Class="CK_C001TestDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CK_C001TestDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        WindowStartupLocation="CenterScreen" 
+        FontSize="15" FontFamily="微软雅黑"  Background="{x:Null}" 
+        AllowsTransparency="True" WindowStyle="None"
+        Width="1000" Height="700"
+        MaxWidth="1000" MaxHeight="700"
+        MinWidth="1000" MinHeight="700"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Pack://application:,,,/PublicResource;Component/styles/CheckBox_Slider.xaml"/>
+                <ResourceDictionary Source="/lang/zh-cn.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0"  >
+            <Grid.Background>
+                <ImageBrush ImageSource="Pack://application:,,,/PublicResource;Component/Images/toolbarbackground.png" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="appName" Text="{DynamicResource 100000}"  FontWeight="Bold" FontSize="22" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+            <TextBlock x:Name="authorName" Text="{DynamicResource 100001}"  FontWeight="Bold" FontSize="10"   Foreground="#FF463E3E"  Grid.Row="2"  Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"   />            
+            <Grid Grid.Column="6"  Grid.Row="1">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="BtnShutdown" Source="Pack://application:,,,/PublicResource;Component/Images/logout.png"  Stretch="Uniform" Grid.Column="1"  VerticalAlignment="Bottom" HorizontalAlignment="Left"  Cursor="Hand" Margin="0,0,7,0" />
+            </Grid>
+            <Grid Grid.Column="6" Grid.Row="2">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{DynamicResource 100003}" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="5" Grid.Row="1" FontSize="12" Foreground="#888" Margin="0 0 0 3" />
+            </Grid>
+        </Grid>
+        <Frame x:Name="pageContainer"   Grid.Row="1"  ScrollViewer.CanContentScroll="True" NavigationUIVisibility="Hidden" JournalOwnership="OwnsJournal"/>
+    </Grid>
+</Window>

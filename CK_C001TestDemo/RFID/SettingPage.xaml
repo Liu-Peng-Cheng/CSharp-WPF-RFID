@@ -1,0 +1,89 @@
+﻿<Page x:Class="CK_C001TestDemo.RFID.SettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CK_C001TestDemo.RFID"
+      mc:Ignorable="d" 
+      Title="SettingPage">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="3*"/>
+            <ColumnDefinition  Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Margin="10 20 10 30" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="工作天线" Grid.Row="0" Margin=" 0 0 0 5" FontSize="15">
+                <WrapPanel x:Name="WrapPanel_UserAnt" AllowDrop="True"/>
+            </GroupBox>
+            <GroupBox Header="功率设置" Grid.Row="1" Margin=" 0 5 0 0" FontSize="15">
+                <WrapPanel x:Name="WrapPanel_SetPower" AllowDrop="True"/>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="1" Margin="10 20 60 30" >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="EPC基带参数" Grid.Row="0" Margin=" 0 0 0 5" FontSize="15">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="30 20 0 5">
+                        <TextBlock Text="基带速率" FontSize="13" VerticalAlignment="Center" Margin="0 0 20 0"/>
+                        <ComboBox x:Name="Combox_BaseSpeed" Width="210" Height="27" FontSize="13" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="30 10 0 5">
+                        <TextBlock Text="Session" FontSize="13" VerticalAlignment="Center" Margin="0 0 25 0"/>
+                        <ComboBox x:Name="Combox_Session" Width="210" Height="27" FontSize="13"  HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="30 10 0 5">
+                        <TextBlock Text="Q值" FontSize="13" VerticalAlignment="Center" Margin="0 0 48 0"/>
+                        <ComboBox x:Name="Combox_QValue" Width="210" Height="27" FontSize="13"  HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="30 10 0 5">
+                        <TextBlock Text="盘存方式" FontSize="13" VerticalAlignment="Center" Margin="0 0 20 0"/>
+                        <ComboBox x:Name="Combox_InventoryType" Width="210" Height="27" FontSize="13"  HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="30 15 0 5">
+                        <Button x:Name="Btn_getBaseSpeed" Content="查询" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center" Margin="72 0 60 0"/>
+                        <Button x:Name="Btn_setBaseSpeed" Content="设置" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center" />                        
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="标签过滤" Margin="0 5 " FontSize="15" Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="30 20 0 0">
+                        <TextBlock Text="重复间隔" FontSize="13" VerticalAlignment="Center" Margin="0 0 20 0"/>
+                        <TextBox x:Name="TextBox_UploadInterval" Text="0" Width="70" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  />
+                        <TextBlock Text="*10ms" FontSize="12" VerticalAlignment="Center" Margin="10 0 20 0"/>                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="30 15 0 0">
+                        <TextBlock Text="过滤RSSI" FontSize="13" VerticalAlignment="Center" Margin="0 0 20 0"/>
+                        <TextBox x:Name="TextBox_RSSI" Text="0" Width="70" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="180 10 0 5">
+                        <Button x:Name="Btn_getFilter" Content="查询" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center" Margin="0 -45 0 0"/>
+                        <Button x:Name="Btn_setFilter" Content="设置" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center"  Margin="0 0 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="工作频段" Margin="0 5 0 0 " FontSize="15" Grid.Row="2">
+                <StackPanel Orientation="Horizontal" Margin="30 0 0 0">
+                    <ComboBox x:Name="Combox_Frequency" Width="180" Height="27" FontSize="13" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    <StackPanel Orientation="Vertical" Margin="30 0 0 5">
+                        <Button x:Name="Btn_getFrequency" Content="查询" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center" Margin="0 0 0 5"/>
+                        <Button x:Name="Btn_setFrequency" Content="设置" Width="75" Height="25" FontSize="13" HorizontalAlignment="Center"  Margin="0 5 0 0"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal" Margin="30 10 0 -15" Grid.Row="3">
+                <Button x:Name="Btn_Break" Content="断开设备" Width="120" Height="35" FontSize="13" HorizontalAlignment="Center" Margin="5 0 45 0"/>
+                <Button x:Name="Btn_Read" Content="读卡界面" Width="120" Height="35" FontSize="13" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

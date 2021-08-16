@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{87C0FD84-D4B6-4087-91CD-A1005B60D0C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PublicAPI</RootNamespace>
+    <AssemblyName>PublicAPI</AssemblyName>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssistClass.cs" />
+    <Compile Include="CKC001\Connected\ClientObject.cs" />
+    <Compile Include="CKC001\Connected\communication\Base.cs" />
+    <Compile Include="CKC001\Connected\communication\TypeTcpClient.cs" />
+    <Compile Include="CKC001\Connected\communication\TypeTcpServer.cs" />
+    <Compile Include="CKC001\Connected\ServerObject.cs" />
+    <Compile Include="CKC001\Connected\UDPObject.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObjBase.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_ContainerSetAddress.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_DeleteAllFingerTemplate.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_DeleteSingleTemplate.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_GatherTemplateCancel.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_GatherTemplates.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_GatherTemplatesACK.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Finger_WriteTempleToDevice.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_HeartBeat.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_HF_ReadIDNum.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_HF_ReadUserData.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_HF_SwitchWorkingMode.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Humiture_SetThresholdValue.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Humiture_SetWorkingMode.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Humiture_StartFan.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_LED_AralmSwitch.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_LED_LightSwitch.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_LED_LightWorkMode.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_Lock_OpenLock.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_RFID_ClearTempTags.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_RFID_GetAllTags.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_RFID_ReadTags.cs" />
+    <Compile Include="CKC001\MessageObj\MsgObj\MsgObj_RFID_StopRead.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\FingerChildrenAckGatherResult.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\FingerChildrenVerify_1_N.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\NotifyBase.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_ContainerNum.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_DevOnline.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Error_Alarm_Abnormal.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Finger.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_HeartBeat.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_HFCard.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Humiture.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Light.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Lock.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_Log.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_QRCode.cs" />
+    <Compile Include="CKC001\MessageObj\Notify\Notify_RFID.cs" />
+    <Compile Include="CKC001\MessageObj\RingBuffer.cs" />
+    <Compile Include="CKC001\MessageObj\Tags.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\DevIPSN.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\Enums.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObjBase.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetDevName.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetDHCP.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetDNS.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetGateWay.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetIP.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetMAC.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetMask.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetNetWorkingMode.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetTCPMode.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_GetUDPMode.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_RePower.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_Reset.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_RestoreFactory.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetDevName.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetDHCP.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetDNS.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetGateWay.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetIP.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetMask.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetNetWorkingMode.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_SetTCPMode.cs" />
+    <Compile Include="CKC001\MessageObj\UdpObj\UdpObj_WakeUpAllDev.cs" />
+    <Compile Include="CKC001\Others\DataConverts.cs" />
+    <Compile Include="CKC001\Others\DelegateAndEvents.cs" />
+    <Compile Include="CKC001\Others\Enums.cs" />
+    <Compile Include="CKC001\Others\ManualReset.cs" />
+    <Compile Include="CKL001\Connected\Base.cs" />
+    <Compile Include="CKL001\Connected\ClientObject.cs" />
+    <Compile Include="CKL001\Connected\TypeSerial.cs" />
+    <Compile Include="CKL001\MessageObj\MsgObj\MsgObj_LED_SetControlMode.cs" />
+    <Compile Include="CKL001\MessageObj\Notify\Notify_Message.cs" />
+    <Compile Include="CKL001\Others\DataConvert.cs" />
+    <Compile Include="CKL001\Others\DelegateEvents.cs" />
+    <Compile Include="CKL001\Others\eNum.cs" />
+    <Compile Include="CKL001\MessageObj\MsgObj\MsgObjBase.cs" />
+    <Compile Include="CKL001\MessageObj\MsgObj\MsgObj_Lock_GetStatus.cs" />
+    <Compile Include="CKL001\MessageObj\MsgObj\MsgObj_Lock_Open.cs" />
+    <Compile Include="CKL001\MessageObj\MsgObj\MsgObj_LED_Switch.cs" />
+    <Compile Include="CKL001\Others\RingBuffer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

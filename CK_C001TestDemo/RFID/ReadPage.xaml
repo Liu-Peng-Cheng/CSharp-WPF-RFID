@@ -1,0 +1,183 @@
+﻿<Page x:Class="CK_C001TestDemo.RFID.ReadPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CK_C001TestDemo.RFID"
+      mc:Ignorable="d" 
+      Title="ReadPage">
+
+    <Grid  Margin="10 0 30 10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="DataGrid_General" Grid.Column="0"  Grid.Row="1"  AutoGenerateColumns="False" IsReadOnly="True" AlternationCount="2" AlternatingRowBackground="PeachPuff" >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Num"  Width="60" Binding="{Binding Num, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="EPC"  Width="180" Binding="{Binding EPC, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="TID"  Width="180" Binding="{Binding TID, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="User"  Width="150" Binding="{Binding User, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Reserve"  Width="150" Binding="{ Binding Reserve, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="TotalCount"  Width="90" Binding="{Binding Total, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant1"  Width="90" Binding="{Binding Ant1, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant2"  Width="90" Binding="{Binding Ant2, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant3"  Width="90" Binding="{Binding Ant3, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant4"  Width="90" Binding="{Binding Ant4, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant5"  Width="90" Binding="{Binding Ant5, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant6"  Width="90" Binding="{Binding Ant6, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant7"  Width="90" Binding="{Binding Ant7, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Ant8"  Width="90" Binding="{Binding Ant8, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant9"  Width="90" Binding="{Binding Ant9, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant10"  Width="90" Binding="{Binding Ant10, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant11"  Width="90" Binding="{Binding Ant11, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant12"  Width="90" Binding="{Binding Ant12, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant13"  Width="90" Binding="{Binding Ant13, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant14"  Width="90" Binding="{Binding Ant14, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant15"  Width="90" Binding="{Binding Ant15, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="Ant16"  Width="90" Binding="{Binding Ant16, UpdateSourceTrigger=PropertyChanged }"/>
+                <DataGridTextColumn Header="RSSI"  Width="90" Binding="{Binding RSSI , UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Frequency"  Width="90" Binding="{Binding Frequency , UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Phase"  Width="90" Binding="{Binding Phase, UpdateSourceTrigger=PropertyChanged }" />
+                <DataGridTextColumn Header="PCValue"  Width="90" Binding="{Binding PcValue, UpdateSourceTrigger=PropertyChanged }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="1" Margin="10 0 0 0" >
+            <Button x:Name="BtnRead" Content="{DynamicResource 107007}"  Margin="0 15 0 5" Height="28" />
+            <Button x:Name="BtnStop" Content="{DynamicResource 107008}" Margin="50 10 0 5" Height="28"/>
+            <TextBlock x:Name="TxtTime" Text="00:00:00.000" FontSize="12" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0 5 0 5"/>
+            <TextBlock Text="{DynamicResource 107009}"  VerticalAlignment="Bottom" />
+            <RadioButton x:Name="RdBtn_Once" Content="{DynamicResource 107010}" VerticalAlignment="Center" Margin="20 5"/>
+            <RadioButton x:Name="RdBtn_While" Content="{DynamicResource 107011}"  VerticalAlignment="Center" Margin="20 5"/>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox  x:Name="RdBtn_Time" Content="{DynamicResource 107012}" VerticalAlignment="Center" Margin="30 0 5 0" />
+                <TextBox x:Name="Child_TxtBox_ReadTime" Height="21" Width="50"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBlock Text="秒" VerticalAlignment="Center"/>
+            </StackPanel>
+            <!--<Popup x:Name="popupReadTime"  Placement="Bottom" PlacementTarget="{Binding ElementName=RdBtn_Time}" StaysOpen="False" >
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" BorderBrush="Black"  Background="#44D1E5" BorderThickness="3,1,3,3" >
+                    <StackPanel Width="100" Height="25" Margin="10,5,0,5" Orientation="Horizontal">
+                        <TextBox x:Name="Child_TxtBox_ReadTime" Height="24" Width="60"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="*10ms" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Popup>-->
+            <TextBlock Text="{DynamicResource 107013}"  VerticalAlignment="Bottom" Margin="0 10 0 5"/>
+            <CheckBox x:Name="CkBox_TID" Content="TID"  VerticalAlignment="Center"  Margin="20 5"/>
+            <Popup x:Name="popupTID"  Placement="Bottom" PlacementTarget="{Binding ElementName=CkBox_TID}" StaysOpen="False" >
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" BorderBrush="Black"  Background="#44D1E5" BorderThickness="3,1,3,3" >
+                    <StackPanel Width="120" Height="70" Margin="5" Orientation="Vertical" >
+                        <RadioButton x:Name="Child_RdBtn_TIDManualLength" Content="{DynamicResource 107014}" Margin="0 0 0 5"/>
+                        <Grid >
+                            <TextBlock Text="{DynamicResource 107015}" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                            <TextBox x:Name="Child_TxtBox_TIDLength" Width="60" Height="21" Margin="60 5 0 5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        </Grid>
+                        <RadioButton x:Name="Child_RdBtn_TIDAutoLength" Content="{DynamicResource 107016}" Margin="0 5"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+            <CheckBox x:Name="CkBox_User" Content="User" VerticalAlignment="Center" Margin="20 5"/>
+            <Popup x:Name="popupUser"  Placement="Bottom" PlacementTarget="{Binding ElementName=CkBox_User}" StaysOpen="False" >
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" BorderBrush="Black"  Background="#44D1E5" BorderThickness="3,1,3,3" >
+                    <StackPanel Width="120" Height="100" Margin="5" Orientation="Vertical">
+                        <TextBlock Text="{DynamicResource 107017}" VerticalAlignment="Center" Margin=" 0 5"/>
+                        <TextBox x:Name="Child_TxtBox_UserStartAddress" Margin="30 0 5 5" Height="21"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource 107018}" VerticalAlignment="Center" Margin=" 0 5"/>
+                        <TextBox x:Name="Child_TxtBox_UserReadLength" Margin="30 0 5 5" Height="21"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+            <CheckBox x:Name="CkBox_Reserve" Content="Reserve"  VerticalAlignment="Center" Margin="20 5"/>
+            <Popup x:Name="popupReserve"  Placement="Bottom" PlacementTarget="{Binding ElementName=CkBox_Reserve}" StaysOpen="False" >
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" BorderBrush="Black"  Background="#44D1E5" BorderThickness="3,1,3,3" >
+                    <StackPanel Width="120" Height="100" Margin="5" Orientation="Vertical">
+                        <TextBlock Text="{DynamicResource 107017}" VerticalAlignment="Center" Margin=" 0 5"/>
+                        <TextBox x:Name="Child_TxtBox_ReserveStartAddress" Margin="30 0 5 5" Height="21"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBlock Text="{DynamicResource 107018}" VerticalAlignment="Center" Margin=" 0 5"/>
+                        <TextBox x:Name="Child_TxtBox_ReserveReadLength" Margin="30 0 5 5" Height="21"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+            <Button x:Name="BtnShowColumn" Content="{DynamicResource 107020}"  Margin=" 0 5" Height="27"/>
+            <Button x:Name="BtnClear"  Content="{DynamicResource 107021}" Margin=" 0 5"  Height="27"/>
+            
+            <Popup x:Name="popupShow" Placement="Left" PlacementTarget="{Binding ElementName=BtnShowColumn}" StaysOpen="False" >
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="210" BorderBrush="Black" Background="#44D1E5" BorderThickness="2,2,1,2" >
+                    <StackPanel Width="180" Height="330" Margin="10,5,0,5">
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk1" Content="EPC" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk2" Content="TID" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk3" Content="User"  Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk4" Content="Reserve" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk6" Content="Ant1"  Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk7" Content="Ant2" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk8" Content="Ant3"  Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk9" Content="Ant4" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk10" Content="Ant5" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk11" Content="Ant6" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk12" Content="Ant7" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk13" Content="Ant8" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>                        
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk14" Content="Ant9" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk15" Content="Ant10" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk16" Content="Ant11" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk17" Content="Ant12" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk18" Content="Ant13" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk19" Content="Ant14" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk20" Content="Ant15" Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk21" Content="Ant16" Margin="90 0 0 0" Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk5" Content="Total"  Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk22" Content="RSSI" Margin="90 0 0 0"  Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk23" Content="Frequency"  Foreground="White" FontWeight="Bold"/>
+                            <CheckBox x:Name="chk24" Content="Phase" Margin="90 0 0 0" Foreground="White"  FontWeight="Bold"/>
+                        </Grid>
+                        <Grid Margin="0 5">
+                            <CheckBox x:Name="chk25" Content="PCValue"  Foreground="White"  FontWeight="Bold"/>
+                            <CheckBox x:Name="chk0" Content="Num" Margin="90 0 0 0"  Foreground="White" FontWeight="Bold"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Popup>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource 107022}"  Margin="10 5 0 0" VerticalAlignment="Center"  FontWeight="Bold"/>
+                <TextBlock x:Name="Txt_TagNum" Text="{Binding Path=TagNum,UpdateSourceTrigger=PropertyChanged}" Foreground="#FFFF0000"  Margin="20 5 0 0" VerticalAlignment="Center"   HorizontalAlignment="Center"  FontWeight="Bold"  FontSize="16" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource 107023}"  Margin="10 5 0 0" VerticalAlignment="Center"  FontWeight="Bold"/>
+                <TextBlock x:Name="Txt_TotalCount" Text="{Binding ReadTotal,UpdateSourceTrigger=PropertyChanged}"   Grid.Row="1" Margin="20 5 0 0" VerticalAlignment="Center"   HorizontalAlignment="Center"  FontWeight="Bold" FontSize="16"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource 107024}"  Margin="10 5 0 0" VerticalAlignment="Center"  FontWeight="Bold"/>
+                <TextBlock x:Name="Txt_Speed" Text="{Binding TagSpeed,UpdateSourceTrigger=PropertyChanged}"   Grid.Row="2" Margin="20 5 0 0" VerticalAlignment="Center"   HorizontalAlignment="Center" FontWeight="Bold" FontSize="16"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0 35 0 0">
+                <Button x:Name="Btn_Setting" Content="{DynamicResource 107025}" Height="27"  Margin=" 0 10"/>
+                <Button x:Name="Btn_Break" Content="{DynamicResource 107026}" Height="27"  Margin=" 0 10"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+
+</Page>
